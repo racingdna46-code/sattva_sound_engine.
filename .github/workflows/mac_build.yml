@@ -22,7 +22,7 @@ jobs:
         run: pip install briefcase
 
       - name: Package macOS App
-        run: briefcase package macOS --adhoc-sign -p
+        run: briefcase package macOS --adhoc-sign -p dmg
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4

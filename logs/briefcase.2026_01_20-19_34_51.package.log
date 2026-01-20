@@ -1,0 +1,558 @@
+Date/Time:       2026-01-20 19:35:01 
+Command line:    C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\__main__.py package android --adhoc-sign --update
+
+OS Release:      Windows 10
+OS Version:      10.0.19045
+Architecture:    AMD64
+Platform:        Windows-10-10.0.19045-SP0
+
+Python exe:      C:\Users\Lenovo\anaconda3\python.exe
+Python version:  3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]
+Virtual env:     False
+Conda env:       True
+
+Briefcase:       0.3.26
+Target platform: android
+Target format:   gradle
+
+Environment Variables:
+	ALLUSERSPROFILE=C:\ProgramData
+	ANTIGRAVITY_EDITOR_APP_ROOT=c:\Users\Lenovo\AppData\Local\Programs\Antigravity\resources\app
+	APPDATA=C:\Users\Lenovo\AppData\Roaming
+	CHROME_CRASHPAD_PIPE_NAME=\\.\pipe\crashpad_13152_DVDFQZALDRRXRWWD
+	COMMONPROGRAMFILES=C:\Program Files\Common Files
+	COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+	COMMONPROGRAMW6432=C:\Program Files\Common Files
+	COMPUTERNAME=DESKTOP-MGGP39C
+	COMSPEC=C:\Windows\system32\cmd.exe
+	DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+	ELECTRON_RUN_AS_NODE=1
+	HOMEDRIVE=C:
+	HOMEPATH=\Users\Lenovo
+	LOCALAPPDATA=C:\Users\Lenovo\AppData\Local
+	LOGONSERVER=\\DESKTOP-MGGP39C
+	NO_PROXY=*.azureedge.net
+	NUMBER_OF_PROCESSORS=4
+	ONEDRIVE=C:\Users\Lenovo\OneDrive
+	ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+	OS=Windows_NT
+	PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;C:\Users\Lenovo\AppData\Local\Muse Hub\lib;C:\Users\Lenovo\AppData\Local\Programs\Antigravity\bin
+	PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+	PROCESSOR_ARCHITECTURE=AMD64
+	PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 61 Stepping 4, GenuineIntel
+	PROCESSOR_LEVEL=6
+	PROCESSOR_REVISION=3d04
+	PROGRAMDATA=C:\ProgramData
+	PROGRAMFILES=C:\Program Files
+	PROGRAMFILES(X86)=C:\Program Files (x86)
+	PROGRAMW6432=C:\Program Files
+	PSMODULEPATH=C:\Users\Lenovo\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+	PUBLIC=C:\Users\Public
+	SESSIONNAME=Console
+	SYSTEMDRIVE=C:
+	SYSTEMROOT=C:\Windows
+	TEMP=C:\Users\Lenovo\AppData\Local\Temp
+	TMP=C:\Users\Lenovo\AppData\Local\Temp
+	USERDOMAIN=DESKTOP-MGGP39C
+	USERDOMAIN_ROAMINGPROFILE=DESKTOP-MGGP39C
+	USERNAME=Lenovo
+	USERPROFILE=C:\Users\Lenovo
+	VSCODE_CODE_CACHE_PATH=C:\Users\Lenovo\AppData\Roaming\Antigravity\CachedData\450b6b28083d737992adc5d19637f22c95ffba7b
+	VSCODE_CRASH_REPORTER_PROCESS_TYPE=extensionHost
+	VSCODE_CWD=C:\Users\Lenovo\AppData\Local\Programs\Antigravity
+	VSCODE_ESM_ENTRYPOINT=vs/workbench/api/node/extensionHostProcess
+	VSCODE_HANDLES_UNCAUGHT_ERRORS=true
+	VSCODE_IPC_HOOK=\\.\pipe\889d90e2-1.104.0-main-sock
+	VSCODE_NLS_CONFIG={"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Antigravity\\resources\\app\\out\\nls.messages.json","locale":"en-us","availableLanguages":{}}
+	VSCODE_PID=13152
+	WINDIR=C:\Windows
+
+pyproject.toml:
+[tool.briefcase]
+project_name = "Sattva Sound Pharmacy"
+bundle = "com.sattva.sound"
+version = "0.1"
+url = "https://sattva.local"
+license.text = "Proprietary"
+author = "Sattva Architect"
+author_email = "architect@sattva.local"
+
+[tool.briefcase.app.sattva_sound]
+formal_name = "Sattva Sound Pharmacy"
+description = "Native application for ADHD sound therapy."
+long_description = "A self-contained native application generating Solfeggio frequencies and Binaural beats for focus and symptom relief."
+sources = ["src/sattva_sound"]
+test_sources = ["tests"]
+
+requires = [
+    "toga",
+    "numpy", 
+]
+
+[tool.briefcase.app.sattva_sound.windows]
+requires = [
+    "sounddevice",
+]
+
+[tool.briefcase.app.sattva_sound.linux]
+requires = [
+    "sounddevice",
+]
+
+[tool.briefcase.app.sattva_sound.macOS]
+requires = [
+    "sounddevice",
+]
+
+[tool.briefcase.app.sattva_sound.android]
+requires = [
+    "toga",
+    "chaquopy-numpy", 
+    # sounddevice on Android is tricky; normally needs a specific build or different lib.
+    # For now, we list it, but it might fail without a recipe. 
+    # We will focus on Windows first as requested.
+]
+
+[tool.briefcase.app.sattva_sound.iOS]
+requires = [
+    "toga",
+    "std-nslog",
+]
+
+Briefcase Log:
+[19:33:56] Using JDK at C:\Users\Lenovo\AppData\Local\BeeWare\briefcase\Cache\tools\java17                                                                               java.py:263
+           Using Android SDK at C:\Users\Lenovo\AppData\Local\BeeWare\briefcase\Cache\tools\android_sdk                                                           android_sdk.py:376
+[19:33:57]                                                                                                                                                              update.py:63
+           [sattva_sound] Updating application code...                                                                                                                  update.py:63
+           Installing src/sattva_sound... started                                                                                                                      create.py:743
+           Installing src/sattva_sound... done                                                                                                                         create.py:743
+                                                                                                                                                                        update.py:67
+           [sattva_sound] Updating requirements...                                                                                                                      update.py:67
+           Writing requirements file... started                                                                                                                        create.py:538
+           Writing requirements file... done                                                                                                                           create.py:538
+                                                                                                                                                                        update.py:71
+           [sattva_sound] Updating application resources...                                                                                                             update.py:71
+                                                                                                                                                                        update.py:75
+           [sattva_sound] Updating application support...                                                                                                               update.py:75
+           No support package required.                                                                                                                                create.py:329
+                                                                                                                                                                        update.py:92
+           [sattva_sound] Removing unneeded app content...                                                                                                              update.py:92
+           Removing unneeded app bundle content... started                                                                                                             create.py:907
+           Removing directory app\build\python\env\debug\Lib\site-packages\__pycache__                                                                                 create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\attr\__pycache__                                                                            create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\attrs\__pycache__                                                                           create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\chaquopy\__pycache__                                                                        create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\__pycache__                                                                             create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\__pycache__                                                                   create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\__pycache__                                                                     create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\cachecontrol\__pycache__                                                        create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\certifi\__pycache__                                                             create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\dependency_groups\__pycache__                                                   create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\distlib\__pycache__                                                             create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\distro\__pycache__                                                              create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\idna\__pycache__                                                                create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\msgpack\__pycache__                                                             create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\packaging\__pycache__                                                           create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\pkg_resources\__pycache__                                                       create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\platformdirs\__pycache__                                                        create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\pygments\__pycache__                                                            create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\pyproject_hooks\__pycache__                                                     create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\requests\__pycache__                                                            create.py:914
+[19:33:58] Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\resolvelib\__pycache__                                                          create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\rich\__pycache__                                                                create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\tomli\__pycache__                                                               create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\tomli_w\__pycache__                                                             create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\truststore\__pycache__                                                          create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\urllib3\__pycache__                                                             create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\urllib3\contrib\__pycache__                                                     create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\urllib3\packages\__pycache__                                                    create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\urllib3\util\__pycache__                                                        create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\urllib3\packages\backports\__pycache__                                          create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\urllib3\contrib\_securetransport\__pycache__                                    create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\resolvelib\resolvers\__pycache__                                                create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\__pycache__                                         create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\pygments\filters\__pycache__                                                    create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\pygments\formatters\__pycache__                                                 create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\pygments\lexers\__pycache__                                                     create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\pygments\styles\__pycache__                                                     create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\packaging\licenses\__pycache__                                                  create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_vendor\cachecontrol\caches\__pycache__                                                 create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\cli\__pycache__                                                               create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\commands\__pycache__                                                          create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\distributions\__pycache__                                                     create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\index\__pycache__                                                             create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\locations\__pycache__                                                         create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\metadata\__pycache__                                                          create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\models\__pycache__                                                            create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\network\__pycache__                                                           create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\operations\__pycache__                                                        create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\req\__pycache__                                                               create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\resolution\__pycache__                                                        create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\utils\__pycache__                                                             create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\vcs\__pycache__                                                               create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\resolution\legacy\__pycache__                                                 create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\resolution\resolvelib\__pycache__                                             create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\operations\build\__pycache__                                                  create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\operations\install\__pycache__                                                create.py:914
+           Removing directory app\build\python\env\debug\Lib\site-packages\pip\_internal\metadata\importlib\__pycache__                                                create.py:914
+           Removing unneeded app bundle content... done                                                                                                                create.py:907
+                                                                                                                                                                        update.py:95
+           [sattva_sound] Application updated.                                                                                                                          update.py:95
+                                                                                                                                                                       gradle.py:349
+           [sattva_sound] Updating app metadata...                                                                                                                     gradle.py:349
+           Setting main module... started                                                                                                                              gradle.py:331
+           Setting main module... done                                                                                                                                 gradle.py:331
+[19:33:59]                                                                                                                                                             gradle.py:352
+           [sattva_sound] Building Android APK...                                                                                                                      gradle.py:352
+           Building... started                                                                                                                                         gradle.py:353
+           Android emulator is already installed.                                                                                                                 android_sdk.py:653
+                                                                                                                                                                   subprocess.py:839
+           >>> Running Command:                                                                                                                                    subprocess.py:839
+           >>>     'C:\Users\Lenovo\.gemini\antigravity\scratch\sattva_sound_engine\build\sattva_sound\android\gradle\gradlew.bat' --console plain assembleDebug   subprocess.py:839
+           >>> Working Directory:                                                                                                                                  subprocess.py:839
+           >>>     C:\Users\Lenovo\.gemini\antigravity\scratch\sattva_sound_engine\build\sattva_sound\android\gradle                                               subprocess.py:839
+           >>> Environment Overrides:                                                                                                                              subprocess.py:839
+           >>>     ANDROID_HOME=C:\Users\Lenovo\AppData\Local\BeeWare\briefcase\Cache\tools\android_sdk                                                            subprocess.py:839
+           >>>     ANDROID_SDK_ROOT=C:\Users\Lenovo\AppData\Local\BeeWare\briefcase\Cache\tools\android_sdk                                                        subprocess.py:839
+           >>>     JAVA_HOME=C:\Users\Lenovo\AppData\Local\BeeWare\briefcase\Cache\tools\java17                                                                    subprocess.py:839
+[19:34:45] > Task :app:preBuild UP-TO-DATE                                                                                                                         subprocess.py:196
+           > Task :app:preDebugBuild UP-TO-DATE                                                                                                                    subprocess.py:196
+           > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE                                                                                                     subprocess.py:196
+[19:34:46] > Task :app:extractDebugPythonBuildPackages                                                                                                             subprocess.py:196
+[19:34:50] > Task :app:installDebugPythonRequirements FAILED                                                                                                       subprocess.py:196
+                                                                                                                                                                   subprocess.py:196
+           [Incubating] Problems report is available at:                                                                                                           subprocess.py:196
+           file:///C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/android/gradle/build/reports/problems/problems-report.html                    
+                                                                                                                                                                   subprocess.py:196
+           FAILURE: Build failed with an exception.                                                                                                                subprocess.py:196
+                                                                                                                                                                   subprocess.py:196
+           * What went wrong:                                                                                                                                      subprocess.py:196
+           Execution failed for task ':app:installDebugPythonRequirements'.                                                                                        subprocess.py:196
+           > Couldn't find Python 3.13. See https://chaquo.com/chaquopy/doc/current/android.html#buildpython.                                                      subprocess.py:196
+                                                                                                                                                                   subprocess.py:196
+           * Try:                                                                                                                                                  subprocess.py:196
+           > Run with --stacktrace option to get the stack trace.                                                                                                  subprocess.py:196
+           > Run with --info or --debug option to get more log output.                                                                                             subprocess.py:196
+           > Run with --scan to get full insights.                                                                                                                 subprocess.py:196
+           > Get more help at https://help.gradle.org.                                                                                                             subprocess.py:196
+                                                                                                                                                                   subprocess.py:196
+           Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.                                                             subprocess.py:196
+                                                                                                                                                                   subprocess.py:196
+           You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.               subprocess.py:196
+                                                                                                                                                                   subprocess.py:196
+           For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle            subprocess.py:196
+           documentation.                                                                                                                                                           
+                                                                                                                                                                   subprocess.py:196
+           BUILD FAILED in 48s                                                                                                                                     subprocess.py:196
+           2 actionable tasks: 2 executed                                                                                                                          subprocess.py:196
+[19:34:51] >>> Return code: 1                                                                                                                                      subprocess.py:839
+                                                                                                                                                                   subprocess.py:839
+           Building... errored                                                                                                                                         gradle.py:353
+                                                                                                                                                                      __main__.py:42
+           Error while building project.                                                                                                                              __main__.py:43
+           Saving log... started                                                                                                                                      console.py:443
+
+Main thread traceback:
+┌─────────────────────────────────────────────────────────────────────── Traceback (most recent call last) ────────────────────────────────────────────────────────────────────────┐
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\platforms\android\gradle.py:355 in build_app                                                                               │
+│                                                                                                                                                                                  │
+│   352 │   │   self.console.info("Building Android APK...", prefix=app.app_name)                                                                                                  │
+│   353 │   │   with self.console.wait_bar("Building..."):                                                                                                                         │
+│   354 │   │   │   try:                                                                                                                                                           │
+│ > 355 │   │   │   │   self.run_gradle(app, ["assembleDebug"])                                                                                                                    │
+│   356 │   │   │   except subprocess.CalledProcessError as e:                                                                                                                     │
+│   357 │   │   │   │   raise BriefcaseCommandError("Error while building project.") from e                                                                                        │
+│   358                                                                                                                                                                            │
+│                                                                                                                                                                                  │
+│ ┌─────────────────────────────────────────── locals ────────────────────────────────────────────┐                                                                                │
+│ │    app = <com.sattva.sound.sattva-sound v0.1 AppConfig>                                       │                                                                                │
+│ │ kwargs = {'adhoc_sign': True, 'identity': None}                                               │                                                                                │
+│ │   self = <briefcase.platforms.android.gradle.GradleBuildCommand object at 0x000001CC0B1BBCB0> │                                                                                │
+│ └───────────────────────────────────────────────────────────────────────────────────────────────┘                                                                                │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\platforms\android\gradle.py:120 in run_gradle                                                                              │
+│                                                                                                                                                                                  │
+│   117 │   │   self.tools.android_sdk.verify_emulator()                                                                                                                           │
+│   118 │   │                                                                                                                                                                      │
+│   119 │   │   gradlew = "gradlew.bat" if self.tools.host_os == "Windows" else "gradlew"                                                                                          │
+│ > 120 │   │   self.tools.subprocess.run(                                                                                                                                         │
+│   121 │   │   │   # Windows needs the full path to `gradlew`; macOS & Linux can find it                                                                                          │
+│   122 │   │   │   # via `./gradlew`. For simplicity of implementation, we always provide                                                                                         │
+│   123 │   │   │   # the full path.                                                                                                                                               │
+│                                                                                                                                                                                  │
+│ ┌──────────────────────────────────────────── locals ────────────────────────────────────────────┐                                                                               │
+│ │     app = <com.sattva.sound.sattva-sound v0.1 AppConfig>                                       │                                                                               │
+│ │    args = ['assembleDebug']                                                                    │                                                                               │
+│ │ gradlew = 'gradlew.bat'                                                                        │                                                                               │
+│ │    self = <briefcase.platforms.android.gradle.GradleBuildCommand object at 0x000001CC0B1BBCB0> │                                                                               │
+│ └────────────────────────────────────────────────────────────────────────────────────────────────┘                                                                               │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\integrations\subprocess.py:143 in inner                                                                                    │
+│                                                                                                                                                                                  │
+│   140 │   │   # Run subprocess command with or without console control                                                                                                           │
+│   141 │   │   if remove_dynamic_elements:                                                                                                                                        │
+│   142 │   │   │   with sub.tools.console.release_console_control():                                                                                                              │
+│ > 143 │   │   │   │   return sub_method(sub, args, *wrapped_args, **wrapped_kwargs)                                                                                              │
+│   144 │   │   else:                                                                                                                                                              │
+│   145 │   │   │   return sub_method(sub, args, *wrapped_args, **wrapped_kwargs)                                                                                                  │
+│   146                                                                                                                                                                            │
+│                                                                                                                                                                                  │
+│ ┌────────────────────────────────────────────────────────────────────────── locals ───────────────────────────────────────────────────────────────────────────┐                  │
+│ │                    args = [                                                                                                                                 │                  │
+│ │                           │   WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/android/gradle/gradlew.bat'), │                  │
+│ │                           │   '--console',                                                                                                                  │                  │
+│ │                           │   'plain',                                                                                                                      │                  │
+│ │                           │   'assembleDebug'                                                                                                               │                  │
+│ │                           ]                                                                                                                                 │                  │
+│ │              executable = 'C:\\Users\\Lenovo\\.gemini\\antigravity\\scratch\\sattva_sound_engine\\build\\sattva_sou'+29                                     │                  │
+│ │ remove_dynamic_elements = True                                                                                                                              │                  │
+│ │                     sub = <briefcase.integrations.subprocess.Subprocess object at 0x000001CC0B1BABA0>                                                       │                  │
+│ │            wrapped_args = ()                                                                                                                                │                  │
+│ │          wrapped_kwargs = {                                                                                                                                 │                  │
+│ │                           │   'env': {                                                                                                                      │                  │
+│ │                           │   │   'ANDROID_HOME': 'C:\\Users\\Lenovo\\AppData\\Local\\BeeWare\\briefcase\\Cache\\tools\\android_sdk',                       │                  │
+│ │                           │   │   'ANDROID_SDK_ROOT': 'C:\\Users\\Lenovo\\AppData\\Local\\BeeWare\\briefcase\\Cache\\tools\\android_sdk',                   │                  │
+│ │                           │   │   'JAVA_HOME': 'C:\\Users\\Lenovo\\AppData\\Local\\BeeWare\\briefcase\\Cache\\tools\\java17'                                │                  │
+│ │                           │   },                                                                                                                            │                  │
+│ │                           │   'cwd': WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/android/gradle'),      │                  │
+│ │                           │   'check': True,                                                                                                                │                  │
+│ │                           │   'encoding': 'CP1252'                                                                                                          │                  │
+│ │                           }                                                                                                                                 │                  │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘                  │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\integrations\subprocess.py:539 in run                                                                                      │
+│                                                                                                                                                                                  │
+│   536 │   │   # caller sets stream_output=False, then ensure_console_is_safe() will                                                                                              │
+│   537 │   │   # disable any dynamic console elements while the command runs.                                                                                                     │
+│   538 │   │   if stream_output:                                                                                                                                                  │
+│ > 539 │   │   │   return self._run_and_stream_output(args, filter_func=filter_func, **kwargs)                                                                                    │
+│   540 │   │                                                                                                                                                                      │
+│   541 │   │   # Can't filter non-streamed output.                                                                                                                                │
+│   542 │   │   if filter_func:                                                                                                                                                    │
+│                                                                                                                                                                                  │
+│ ┌───────────────────────────────────────────────────────────────────── locals ──────────────────────────────────────────────────────────────────────┐                            │
+│ │          args = [                                                                                                                                 │                            │
+│ │                 │   WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/android/gradle/gradlew.bat'), │                            │
+│ │                 │   '--console',                                                                                                                  │                            │
+│ │                 │   'plain',                                                                                                                      │                            │
+│ │                 │   'assembleDebug'                                                                                                               │                            │
+│ │                 ]                                                                                                                                 │                            │
+│ │   filter_func = None                                                                                                                              │                            │
+│ │        kwargs = {                                                                                                                                 │                            │
+│ │                 │   'env': {                                                                                                                      │                            │
+│ │                 │   │   'ANDROID_HOME': 'C:\\Users\\Lenovo\\AppData\\Local\\BeeWare\\briefcase\\Cache\\tools\\android_sdk',                       │                            │
+│ │                 │   │   'ANDROID_SDK_ROOT': 'C:\\Users\\Lenovo\\AppData\\Local\\BeeWare\\briefcase\\Cache\\tools\\android_sdk',                   │                            │
+│ │                 │   │   'JAVA_HOME': 'C:\\Users\\Lenovo\\AppData\\Local\\BeeWare\\briefcase\\Cache\\tools\\java17'                                │                            │
+│ │                 │   },                                                                                                                            │                            │
+│ │                 │   'cwd': WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/android/gradle'),      │                            │
+│ │                 │   'check': True,                                                                                                                │                            │
+│ │                 │   'encoding': 'CP1252'                                                                                                          │                            │
+│ │                 }                                                                                                                                 │                            │
+│ │          self = <briefcase.integrations.subprocess.Subprocess object at 0x000001CC0B1BABA0>                                                       │                            │
+│ │ stream_output = True                                                                                                                              │                            │
+│ └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘                            │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\integrations\subprocess.py:616 in _run_and_stream_output                                                                   │
+│                                                                                                                                                                                  │
+│   613 │   │   self._log_return_code(return_code)                                                                                                                                 │
+│   614 │   │                                                                                                                                                                      │
+│   615 │   │   if check and return_code:                                                                                                                                          │
+│ > 616 │   │   │   raise subprocess.CalledProcessError(return_code, args, stderr=stderr)                                                                                          │
+│   617 │   │                                                                                                                                                                      │
+│   618 │   │   return subprocess.CompletedProcess(args, return_code, stderr=stderr)                                                                                               │
+│   619                                                                                                                                                                            │
+│                                                                                                                                                                                  │
+│ ┌──────────────────────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────────────────────┐                              │
+│ │        args = [                                                                                                                                 │                              │
+│ │               │   WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/android/gradle/gradlew.bat'), │                              │
+│ │               │   '--console',                                                                                                                  │                              │
+│ │               │   'plain',                                                                                                                      │                              │
+│ │               │   'assembleDebug'                                                                                                               │                              │
+│ │               ]                                                                                                                                 │                              │
+│ │       check = True                                                                                                                              │                              │
+│ │ filter_func = None                                                                                                                              │                              │
+│ │      kwargs = {                                                                                                                                 │                              │
+│ │               │   'env': {                                                                                                                      │                              │
+│ │               │   │   'ANDROID_HOME': 'C:\\Users\\Lenovo\\AppData\\Local\\BeeWare\\briefcase\\Cache\\tools\\android_sdk',                       │                              │
+│ │               │   │   'ANDROID_SDK_ROOT': 'C:\\Users\\Lenovo\\AppData\\Local\\BeeWare\\briefcase\\Cache\\tools\\android_sdk',                   │                              │
+│ │               │   │   'JAVA_HOME': 'C:\\Users\\Lenovo\\AppData\\Local\\BeeWare\\briefcase\\Cache\\tools\\java17'                                │                              │
+│ │               │   },                                                                                                                            │                              │
+│ │               │   'cwd': WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/android/gradle'),      │                              │
+│ │               │   'encoding': 'CP1252',                                                                                                         │                              │
+│ │               │   'stdout': -1,                                                                                                                 │                              │
+│ │               │   'stderr': -2,                                                                                                                 │                              │
+│ │               │   'bufsize': 1                                                                                                                  │                              │
+│ │               }                                                                                                                                 │                              │
+│ │     process = <Popen: returncode: 1 args: ['C:\\Users\\Lenovo\\.gemini\\antigravity\\scrat...>                                                  │                              │
+│ │ return_code = 1                                                                                                                                 │                              │
+│ │        self = <briefcase.integrations.subprocess.Subprocess object at 0x000001CC0B1BABA0>                                                       │                              │
+│ │      stderr = None                                                                                                                              │                              │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘                              │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+CalledProcessError: Command '[WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/android/gradle/gradlew.bat'), '--console', 'plain', 'assembleDebug']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+┌─────────────────────────────────────────────────────────────────────── Traceback (most recent call last) ────────────────────────────────────────────────────────────────────────┐
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\__main__.py:27 in main                                                                                                     │
+│                                                                                                                                                                                  │
+│   24 │   │   │   Path.cwd() / "pyproject.toml",                                                                                                                                  │
+│   25 │   │   │   overrides=overrides,                                                                                                                                            │
+│   26 │   │   )                                                                                                                                                                   │
+│ > 27 │   │   command(**options)                                                                                                                                                  │
+│   28 │   except HelpText as e:                                                                                                                                                   │
+│   29 │   │   console.info()                                                                                                                                                      │
+│   30 │   │   console.info(str(e))                                                                                                                                                │
+│                                                                                                                                                                                  │
+│ ┌──────────────────────────────────────────────── locals ────────────────────────────────────────────────┐                                                                       │
+│ │       command = <briefcase.platforms.android.gradle.GradlePackageCommand object at 0x000001CC0B1B9FD0> │                                                                       │
+│ │       console = <briefcase.console.Console object at 0x000001CC07B23620>                               │                                                                       │
+│ │             e = BriefcaseCommandError('Error while building project.')                                 │                                                                       │
+│ │ extra_cmdline = ['--adhoc-sign', '--update']                                                           │                                                                       │
+│ │       options = {'update': True, 'packaging_format': 'aab', 'adhoc_sign': True, 'identity': None}      │                                                                       │
+│ │     overrides = {}                                                                                     │                                                                       │
+│ │        result = 200                                                                                    │                                                                       │
+│ └────────────────────────────────────────────────────────────────────────────────────────────────────────┘                                                                       │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\commands\package.py:204 in __call__                                                                                        │
+│                                                                                                                                                                                  │
+│   201 │   │                                                                                                                                                                      │
+│   202 │   │   state = None                                                                                                                                                       │
+│   203 │   │   for _, app_obj in sorted(apps_to_package.items()):                                                                                                                 │
+│ > 204 │   │   │   state = self._package_app(                                                                                                                                     │
+│   205 │   │   │   │   app_obj,                                                                                                                                                   │
+│   206 │   │   │   │   update=update,                                                                                                                                             │
+│   207 │   │   │   │   **full_options(state, options),                                                                                                                            │
+│                                                                                                                                                                                  │
+│ ┌───────────────────────────────────────────────── locals ─────────────────────────────────────────────────┐                                                                     │
+│ │               _ = 'sattva_sound'                                                                         │                                                                     │
+│ │             app = None                                                                                   │                                                                     │
+│ │        app_name = None                                                                                   │                                                                     │
+│ │         app_obj = <com.sattva.sound.sattva-sound v0.1 AppConfig>                                         │                                                                     │
+│ │ apps_to_package = {'sattva_sound': <com.sattva.sound.sattva-sound v0.1 AppConfig>}                       │                                                                     │
+│ │         options = {'packaging_format': 'aab', 'adhoc_sign': True, 'identity': None}                      │                                                                     │
+│ │            self = <briefcase.platforms.android.gradle.GradlePackageCommand object at 0x000001CC0B1B9FD0> │                                                                     │
+│ │           state = None                                                                                   │                                                                     │
+│ │          update = True                                                                                   │                                                                     │
+│ └──────────────────────────────────────────────────────────────────────────────────────────────────────────┘                                                                     │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\commands\package.py:116 in _package_app                                                                                    │
+│                                                                                                                                                                                  │
+│   113 │   │   │   │   update_support=True,                                                                                                                                       │
+│   114 │   │   │   │   **options,                                                                                                                                                 │
+│   115 │   │   │   )                                                                                                                                                              │
+│ > 116 │   │   │   state = self.build_command(app, **full_options(state, options))                                                                                                │
+│   117 │   │   elif not binary_file.exists():                                                                                                                                     │
+│   118 │   │   │   state = self.build_command(app, **options)                                                                                                                     │
+│   119 │   │   else:                                                                                                                                                              │
+│                                                                                                                                                                                  │
+│ ┌─────────────────────────────────────────────────────────────────────────────────── locals ───────────────────────────────────────────────────────────────────────────────────┐ │
+│ │              app = <com.sattva.sound.sattva-sound v0.1 AppConfig>                                                                                                            │ │
+│ │      binary_file = WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/android/gradle/app/build/outputs/apk/debug/app-debug.apk… │ │
+│ │          options = {'adhoc_sign': True, 'identity': None}                                                                                                                    │ │
+│ │ packaging_format = 'aab'                                                                                                                                                     │ │
+│ │             self = <briefcase.platforms.android.gradle.GradlePackageCommand object at 0x000001CC0B1B9FD0>                                                                    │ │
+│ │            state = None                                                                                                                                                      │ │
+│ │    template_file = WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/android/gradle')                                          │ │
+│ │           update = True                                                                                                                                                      │ │
+│ └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\commands\build.py:159 in __call__                                                                                          │
+│                                                                                                                                                                                  │
+│   156 │   │                                                                                                                                                                      │
+│   157 │   │   state = None                                                                                                                                                       │
+│   158 │   │   for _, app_obj in sorted(apps_to_build.items()):                                                                                                                   │
+│ > 159 │   │   │   state = self._build_app(                                                                                                                                       │
+│   160 │   │   │   │   app_obj,                                                                                                                                                   │
+│   161 │   │   │   │   update=update,                                                                                                                                             │
+│   162 │   │   │   │   update_requirements=update_requirements,                                                                                                                   │
+│                                                                                                                                                                                  │
+│ ┌────────────────────────────────────────────────── locals ──────────────────────────────────────────────────┐                                                                   │
+│ │                   _ = 'sattva_sound'                                                                       │                                                                   │
+│ │                 app = <com.sattva.sound.sattva-sound v0.1 AppConfig>                                       │                                                                   │
+│ │            app_name = None                                                                                 │                                                                   │
+│ │             app_obj = <com.sattva.sound.sattva-sound v0.1 AppConfig>                                       │                                                                   │
+│ │       apps_to_build = {'sattva_sound': <com.sattva.sound.sattva-sound v0.1 AppConfig>}                     │                                                                   │
+│ │            debugger = None                                                                                 │                                                                   │
+│ │           no_update = False                                                                                │                                                                   │
+│ │             options = {'adhoc_sign': True, 'identity': None}                                               │                                                                   │
+│ │                self = <briefcase.platforms.android.gradle.GradleBuildCommand object at 0x000001CC0B1BBCB0> │                                                                   │
+│ │               state = None                                                                                 │                                                                   │
+│ │           test_mode = False                                                                                │                                                                   │
+│ │              update = False                                                                                │                                                                   │
+│ │ update_requirements = False                                                                                │                                                                   │
+│ │    update_resources = False                                                                                │                                                                   │
+│ │         update_stub = False                                                                                │                                                                   │
+│ │      update_support = False                                                                                │                                                                   │
+│ └────────────────────────────────────────────────────────────────────────────────────────────────────────────┘                                                                   │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\commands\build.py:92 in _build_app                                                                                         │
+│                                                                                                                                                                                  │
+│    89 │   │                                                                                                                                                                      │
+│    90 │   │   self.verify_app(app)                                                                                                                                               │
+│    91 │   │                                                                                                                                                                      │
+│ >  92 │   │   state = self.build_app(app, **full_options(state, options))                                                                                                        │
+│    93 │   │                                                                                                                                                                      │
+│    94 │   │   qualifier = " (test mode)" if app.test_mode else ""                                                                                                                │
+│    95 │   │   qualifier += " (debug mode)" if app.debugger else ""                                                                                                               │
+│                                                                                                                                                                                  │
+│ ┌────────────────────────────────────────────────── locals ──────────────────────────────────────────────────┐                                                                   │
+│ │                 app = <com.sattva.sound.sattva-sound v0.1 AppConfig>                                       │                                                                   │
+│ │           no_update = False                                                                                │                                                                   │
+│ │             options = {'adhoc_sign': True, 'identity': None}                                               │                                                                   │
+│ │                self = <briefcase.platforms.android.gradle.GradleBuildCommand object at 0x000001CC0B1BBCB0> │                                                                   │
+│ │               state = None                                                                                 │                                                                   │
+│ │              update = False                                                                                │                                                                   │
+│ │ update_requirements = False                                                                                │                                                                   │
+│ │    update_resources = False                                                                                │                                                                   │
+│ │         update_stub = False                                                                                │                                                                   │
+│ │      update_support = False                                                                                │                                                                   │
+│ └────────────────────────────────────────────────────────────────────────────────────────────────────────────┘                                                                   │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\platforms\android\gradle.py:357 in build_app                                                                               │
+│                                                                                                                                                                                  │
+│   354 │   │   │   try:                                                                                                                                                           │
+│   355 │   │   │   │   self.run_gradle(app, ["assembleDebug"])                                                                                                                    │
+│   356 │   │   │   except subprocess.CalledProcessError as e:                                                                                                                     │
+│ > 357 │   │   │   │   raise BriefcaseCommandError("Error while building project.") from e                                                                                        │
+│   358                                                                                                                                                                            │
+│   359                                                                                                                                                                            │
+│   360 class GradleRunCommand(GradleMixin, RunCommand):                                                                                                                           │
+│                                                                                                                                                                                  │
+│ ┌─────────────────────────────────────────── locals ────────────────────────────────────────────┐                                                                                │
+│ │    app = <com.sattva.sound.sattva-sound v0.1 AppConfig>                                       │                                                                                │
+│ │ kwargs = {'adhoc_sign': True, 'identity': None}                                               │                                                                                │
+│ │   self = <briefcase.platforms.android.gradle.GradleBuildCommand object at 0x000001CC0B1BBCB0> │                                                                                │
+│ └───────────────────────────────────────────────────────────────────────────────────────────────┘                                                                                │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+BriefcaseCommandError: Error while building project.
+[19:34:52] Collecting extra information for log... started                                                                                                            console.py:481
+                                                                                                                                                                      console.py:485
+           Extra information:                                                                                                                                         console.py:486
+                                                                                                                                                                   subprocess.py:839
+           >>> Running Command:                                                                                                                                    subprocess.py:839
+           >>>     'C:\Users\Lenovo\AppData\Local\BeeWare\briefcase\Cache\tools\android_sdk\cmdline-tools\19.0\bin\sdkmanager.bat' --list_installed                subprocess.py:839
+           >>> Working Directory:                                                                                                                                  subprocess.py:839
+           >>>     C:\Users\Lenovo\.gemini\antigravity\scratch\sattva_sound_engine                                                                                 subprocess.py:839
+           >>> Environment Overrides:                                                                                                                              subprocess.py:839
+           >>>     ANDROID_HOME=C:\Users\Lenovo\AppData\Local\BeeWare\briefcase\Cache\tools\android_sdk                                                            subprocess.py:839
+           >>>     ANDROID_SDK_ROOT=C:\Users\Lenovo\AppData\Local\BeeWare\briefcase\Cache\tools\android_sdk                                                        subprocess.py:839
+           >>>     JAVA_HOME=C:\Users\Lenovo\AppData\Local\BeeWare\briefcase\Cache\tools\java17                                                                    subprocess.py:839
+[19:35:01] >>> Command Output:                                                                                                                                     subprocess.py:839
+           >>>     Loading package information...                                                                                                                  subprocess.py:839
+           >>>     Loading local repository...                                                                                                                     subprocess.py:839
+           >>>     [=========                              ] 25% Loading local repository...                                                                       subprocess.py:839
+           >>>     [=========                              ] 25% Fetch remote repository...                                                                        subprocess.py:839
+           >>>     [=======================================] 100% Fetch remote repository...                                                                       subprocess.py:839
+           >>>                                                                                                                                                     subprocess.py:839
+           >>>     Installed packages:                                                                                                                             subprocess.py:839
+           >>>       Path                 | Version | Description                | Location                                                                        subprocess.py:839
+           >>>       -------              | ------- | -------                    | -------                                                                         subprocess.py:839
+           >>>       build-tools;35.0.0   | 35.0.0  | Android SDK Build-Tools 35 | build-tools\35.0.0                                                              subprocess.py:839
+           >>>       emulator             | 36.3.10 | Android Emulator           | emulator                                                                        subprocess.py:839
+           >>>       platform-tools       | 36.0.2  | Android SDK Platform-Tools | platform-tools                                                                  subprocess.py:839
+           >>>       platforms;android-35 | 2       | Android SDK Platform 35    | platforms\android-35                                                            subprocess.py:839
+           >>>                                                                                                                                                     subprocess.py:839
+           >>> Return code: 0                                                                                                                                      subprocess.py:839
+                                                                                                                                                                   subprocess.py:839
+           Collecting extra information for log... done                                                                                                               console.py:481

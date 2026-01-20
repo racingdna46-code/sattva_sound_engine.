@@ -1,0 +1,50 @@
+[tool.briefcase]
+project_name = "Sattva Sound Pharmacy"
+bundle = "com.sattva.sound"
+version = "0.1"
+url = "https://sattva.local"
+license.text = "Proprietary"
+author = "Sattva Architect"
+author_email = "architect@sattva.local"
+
+[tool.briefcase.app.sattva_sound]
+formal_name = "Sattva Sound Pharmacy"
+description = "Native application for ADHD sound therapy."
+long_description = "A self-contained native application generating Solfeggio frequencies and Binaural beats for focus and symptom relief."
+sources = ["src/sattva_sound"]
+test_sources = ["tests"]
+
+requires = [
+    "toga",
+    "numpy", 
+]
+
+[tool.briefcase.app.sattva_sound.windows]
+requires = [
+    "sounddevice",
+]
+
+[tool.briefcase.app.sattva_sound.linux]
+requires = [
+    "sounddevice",
+]
+
+[tool.briefcase.app.sattva_sound.macOS]
+requires = [
+    "sounddevice",
+]
+
+[tool.briefcase.app.sattva_sound.android]
+requires = [
+    "toga",
+    "chaquopy-numpy", 
+    # sounddevice on Android is tricky; normally needs a specific build or different lib.
+    # For now, we list it, but it might fail without a recipe. 
+    # We will focus on Windows first as requested.
+]
+
+[tool.briefcase.app.sattva_sound.iOS]
+requires = [
+    "toga",
+    "std-nslog",
+]

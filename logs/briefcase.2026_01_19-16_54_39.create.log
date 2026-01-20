@@ -1,0 +1,389 @@
+Date/Time:       2026-01-19 16:54:40 
+Command line:    C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\__main__.py create windows --no-input
+
+OS Release:      Windows 10
+OS Version:      10.0.19045
+Architecture:    AMD64
+Platform:        Windows-10-10.0.19045-SP0
+
+Python exe:      C:\Users\Lenovo\anaconda3\python.exe
+Python version:  3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]
+Virtual env:     False
+Conda env:       True
+
+Briefcase:       0.3.26
+Target platform: windows
+Target format:   app
+
+Environment Variables:
+	ALLUSERSPROFILE=C:\ProgramData
+	ANTIGRAVITY_EDITOR_APP_ROOT=c:\Users\Lenovo\AppData\Local\Programs\Antigravity\resources\app
+	APPDATA=C:\Users\Lenovo\AppData\Roaming
+	CHROME_CRASHPAD_PIPE_NAME=\\.\pipe\crashpad_11244_UZVYMGJPYZZZTHOD
+	COMMONPROGRAMFILES=C:\Program Files\Common Files
+	COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+	COMMONPROGRAMW6432=C:\Program Files\Common Files
+	COMPUTERNAME=DESKTOP-MGGP39C
+	COMSPEC=C:\Windows\system32\cmd.exe
+	DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+	ELECTRON_RUN_AS_NODE=1
+	FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+	FPS_BROWSER_USER_PROFILE_STRING=Default
+	HOMEDRIVE=C:
+	HOMEPATH=\Users\Lenovo
+	LOCALAPPDATA=C:\Users\Lenovo\AppData\Local
+	LOGONSERVER=\\DESKTOP-MGGP39C
+	NO_PROXY=*.azureedge.net
+	NUMBER_OF_PROCESSORS=4
+	ONEDRIVE=C:\Users\Lenovo\OneDrive
+	ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+	OS=Windows_NT
+	PATH=C:\Program Files\Git\cmd;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;C:\Users\Lenovo\AppData\Local\Muse Hub\lib;C:\Users\Lenovo\AppData\Local\Programs\Antigravity\bin
+	PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+	PROCESSOR_ARCHITECTURE=AMD64
+	PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 61 Stepping 4, GenuineIntel
+	PROCESSOR_LEVEL=6
+	PROCESSOR_REVISION=3d04
+	PROGRAMDATA=C:\ProgramData
+	PROGRAMFILES=C:\Program Files
+	PROGRAMFILES(X86)=C:\Program Files (x86)
+	PROGRAMW6432=C:\Program Files
+	PSMODULEPATH=C:\Users\Lenovo\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+	PUBLIC=C:\Users\Public
+	SESSIONNAME=Console
+	SYSTEMDRIVE=C:
+	SYSTEMROOT=C:\Windows
+	TEMP=C:\Users\Lenovo\AppData\Local\Temp
+	TMP=C:\Users\Lenovo\AppData\Local\Temp
+	USERDOMAIN=DESKTOP-MGGP39C
+	USERDOMAIN_ROAMINGPROFILE=DESKTOP-MGGP39C
+	USERNAME=Lenovo
+	USERPROFILE=C:\Users\Lenovo
+	VSCODE_CODE_CACHE_PATH=C:\Users\Lenovo\AppData\Roaming\Antigravity\CachedData\450b6b28083d737992adc5d19637f22c95ffba7b
+	VSCODE_CRASH_REPORTER_PROCESS_TYPE=extensionHost
+	VSCODE_CWD=C:\Users\Lenovo\AppData\Local\Programs\Antigravity
+	VSCODE_ESM_ENTRYPOINT=vs/workbench/api/node/extensionHostProcess
+	VSCODE_HANDLES_UNCAUGHT_ERRORS=true
+	VSCODE_IPC_HOOK=\\.\pipe\889d90e2-1.104.0-main-sock
+	VSCODE_NLS_CONFIG={"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Antigravity\\resources\\app\\out\\nls.messages.json","locale":"en-us","availableLanguages":{}}
+	VSCODE_PID=11244
+	WINDIR=C:\Windows
+
+pyproject.toml:
+[tool.briefcase]
+project_name = "Sattva Sound Pharmacy"
+bundle = "com.sattva.sound"
+version = "0.1"
+url = "https://sattva.local"
+license.text = "Proprietary"
+author = "Sattva Architect"
+author_email = "architect@sattva.local"
+
+[tool.briefcase.app.sattva_sound]
+formal_name = "Sattva Sound Pharmacy"
+description = "Native application for ADHD sound therapy."
+long_description = "A self-contained native application generating Solfeggio frequencies and Binaural beats for focus and symptom relief."
+sources = ["src/sattva_sound"]
+test_sources = ["tests"]
+
+requires = [
+    "toga",
+    "sounddevice",
+    "numpy", 
+]
+
+[tool.briefcase.app.sattva_sound.windows]
+requires = [
+    "toga",
+    "sounddevice",
+    "numpy",
+]
+
+[tool.briefcase.app.sattva_sound.linux]
+requires = [
+    "toga",
+    "sounddevice",
+    "numpy",
+]
+
+[tool.briefcase.app.sattva_sound.macOS]
+requires = [
+    "toga",
+    "sounddevice",
+    "numpy",
+]
+
+[tool.briefcase.app.sattva_sound.android]
+requires = [
+    "toga",
+    "chaquopy-numpy", 
+    # sounddevice on Android is tricky; normally needs a specific build or different lib.
+    # For now, we list it, but it might fail without a recipe. 
+    # We will focus on Windows first as requested.
+]
+
+[tool.briefcase.app.sattva_sound.iOS]
+requires = [
+    "toga",
+    "std-nslog",
+]
+
+Briefcase Log:
+[16:53:38]                                                                                                                                                             create.py:947
+           [sattva_sound] Generating application template...                                                                                                           create.py:947
+           Assigning sattva_sound an application GUID of 07bbf733-62f8-5392-b46f-7533530076fa                                                                        __init__.py:168
+           Using app template: https://github.com/beeware/briefcase-windows-app-template.git, branch v0.3.26                                                            base.py:1320
+           Cloning template 'https://github.com/beeware/briefcase-windows-app-template.git'...                                                                          base.py:1145
+[16:53:42] Using existing template (sha 963d0d61daf11344b656430d45701eab70407f60, updated Wed Dec  3 06:10:36 2025)                                                     base.py:1221
+[16:53:44]                                                                                                                                                             create.py:969
+           [sattva_sound] Installing support package...                                                                                                                create.py:969
+           Using support package https://www.python.org/ftp/python/3.13.8/python-3.13.8-embed-amd64.zip                                                                create.py:372
+[16:53:46] Downloading python-3.13.8-embed-amd64.zip...                                                                                                                  file.py:227
+[16:53:49] Unpacking support package... started                                                                                                                        create.py:287
+           Unpacking support package... done                                                                                                                           create.py:287
+                                                                                                                                                                       create.py:980
+           [sattva_sound] Installing stub binary...                                                                                                                    create.py:980
+           Using stub binary https://briefcase-support.s3.amazonaws.com/python/3.13/windows/GUI-Stub-3.13-b10.zip                                                      create.py:483
+[16:53:50] Downloading GUI-Stub-3.13-b10.zip...                                                                                                                          file.py:227
+[16:53:51] Installing stub binary... started                                                                                                                           create.py:428
+           Installing stub binary... done                                                                                                                              create.py:428
+                                                                                                                                                                       create.py:987
+           [sattva_sound] Installing application code...                                                                                                               create.py:987
+           Installing src/sattva_sound... started                                                                                                                      create.py:743
+           Installing src/sattva_sound... done                                                                                                                         create.py:743
+                                                                                                                                                                       create.py:990
+           [sattva_sound] Installing requirements...                                                                                                                   create.py:990
+           Installing app requirements... started                                                                                                                      create.py:666
+                                                                                                                                                                   subprocess.py:839
+           >>> Running Command:                                                                                                                                    subprocess.py:839
+           >>>     'C:\Users\Lenovo\anaconda3\python.exe' -u -X utf8 -m pip install --disable-pip-version-check --upgrade --no-user                                subprocess.py:839
+           '--target=C:\Users\Lenovo\.gemini\antigravity\scratch\sattva_sound_engine\build\sattva_sound\windows\app\src\app_packages' toga sounddevice numpy toga                   
+           sounddevice numpy                                                                                                                                                        
+           >>> Working Directory:                                                                                                                                  subprocess.py:839
+           >>>     C:\Users\Lenovo\.gemini\antigravity\scratch\sattva_sound_engine                                                                                 subprocess.py:839
+[16:53:54] Collecting toga                                                                                                                                         subprocess.py:196
+             Using cached toga-0.5.3-py3-none-any.whl.metadata (4.3 kB)                                                                                            subprocess.py:196
+           Collecting sounddevice                                                                                                                                  subprocess.py:196
+             Using cached sounddevice-0.5.3-py3-none-win_amd64.whl.metadata (1.6 kB)                                                                               subprocess.py:196
+[16:53:55] Collecting numpy                                                                                                                                        subprocess.py:196
+[16:53:56]   Downloading numpy-2.4.1-cp313-cp313-win_amd64.whl.metadata (6.6 kB)                                                                                   subprocess.py:196
+           Collecting toga-winforms==0.5.3 (from toga)                                                                                                             subprocess.py:196
+             Using cached toga_winforms-0.5.3-py3-none-win_amd64.whl.metadata (3.4 kB)                                                                             subprocess.py:196
+[16:53:57] Collecting pythonnet>=3.0.0 (from toga-winforms==0.5.3->toga)                                                                                           subprocess.py:196
+             Using cached pythonnet-3.0.5-py3-none-any.whl.metadata (6.6 kB)                                                                                       subprocess.py:196
+           Collecting toga-core==0.5.3 (from toga-winforms==0.5.3->toga)                                                                                           subprocess.py:196
+             Using cached toga_core-0.5.3-py3-none-any.whl.metadata (4.0 kB)                                                                                       subprocess.py:196
+           Collecting pillow>=10.0.0 (from toga-winforms==0.5.3->toga)                                                                                             subprocess.py:196
+             Downloading pillow-12.1.0-cp313-cp313-win_amd64.whl.metadata (9.0 kB)                                                                                 subprocess.py:196
+[16:53:58] Collecting travertino==0.5.3 (from toga-core==0.5.3->toga-winforms==0.5.3->toga)                                                                        subprocess.py:196
+             Using cached travertino-0.5.3-py3-none-any.whl.metadata (2.9 kB)                                                                                      subprocess.py:196
+           Collecting CFFI>=1.0 (from sounddevice)                                                                                                                 subprocess.py:196
+             Downloading cffi-2.0.0-cp313-cp313-win_amd64.whl.metadata (2.6 kB)                                                                                    subprocess.py:196
+           Collecting pycparser (from CFFI>=1.0->sounddevice)                                                                                                      subprocess.py:196
+             Downloading pycparser-2.23-py3-none-any.whl.metadata (993 bytes)                                                                                      subprocess.py:196
+[16:53:59] Collecting clr_loader<0.3.0,>=0.2.7 (from pythonnet>=3.0.0->toga-winforms==0.5.3->toga)                                                                 subprocess.py:196
+             Using cached clr_loader-0.2.10-py3-none-any.whl.metadata (1.5 kB)                                                                                     subprocess.py:196
+           Using cached toga-0.5.3-py3-none-any.whl (3.4 kB)                                                                                                       subprocess.py:196
+           Using cached toga_winforms-0.5.3-py3-none-win_amd64.whl (344 kB)                                                                                        subprocess.py:196
+           Using cached toga_core-0.5.3-py3-none-any.whl (147 kB)                                                                                                  subprocess.py:196
+           Using cached travertino-0.5.3-py3-none-any.whl (26 kB)                                                                                                  subprocess.py:196
+           Using cached sounddevice-0.5.3-py3-none-win_amd64.whl (364 kB)                                                                                          subprocess.py:196
+           Downloading numpy-2.4.1-cp313-cp313-win_amd64.whl (12.3 MB)                                                                                             subprocess.py:196
+[16:54:02]    ---------------------------------------- 12.3/12.3 MB 3.9 MB/s  0:00:03                                                                              subprocess.py:196
+           Downloading cffi-2.0.0-cp313-cp313-win_amd64.whl (183 kB)                                                                                               subprocess.py:196
+           Downloading pillow-12.1.0-cp313-cp313-win_amd64.whl (7.0 MB)                                                                                            subprocess.py:196
+[16:54:04]    ---------------------------------------- 7.0/7.0 MB 3.8 MB/s  0:00:01                                                                                subprocess.py:196
+           Using cached pythonnet-3.0.5-py3-none-any.whl (297 kB)                                                                                                  subprocess.py:196
+           Using cached clr_loader-0.2.10-py3-none-any.whl (56 kB)                                                                                                 subprocess.py:196
+           Downloading pycparser-2.23-py3-none-any.whl (118 kB)                                                                                                    subprocess.py:196
+[16:54:08] Installing collected packages: travertino, pycparser, pillow, numpy, toga-core, CFFI, sounddevice, clr_loader, pythonnet, toga-winforms, toga           subprocess.py:196
+[16:54:38]                                                                                                                                                         subprocess.py:196
+           ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the          subprocess.py:196
+           following dependency conflicts.                                                                                                                                          
+           moviepy 2.2.1 requires pillow<12.0,>=9.2.0, but you have pillow 12.1.0 which is incompatible.                                                           subprocess.py:196
+           numba 0.62.1 requires numpy<2.4,>=1.22, but you have numpy 2.4.1 which is incompatible.                                                                 subprocess.py:196
+           Successfully installed CFFI-2.0.0 clr_loader-0.2.10 numpy-2.4.1 pillow-12.1.0 pycparser-2.23 pythonnet-3.0.5 sounddevice-0.5.3 toga-0.5.3               subprocess.py:196
+           toga-core-0.5.3 toga-winforms-0.5.3 travertino-0.5.3                                                                                                                     
+[16:54:39] >>> Return code: 0                                                                                                                                      subprocess.py:839
+                                                                                                                                                                   subprocess.py:839
+           Installing app requirements... done                                                                                                                         create.py:666
+                                                                                                                                                                       create.py:993
+           [sattva_sound] Installing application resources...                                                                                                          create.py:993
+           Installing license... started                                                                                                                             __init__.py:326
+                                                                                                                                                                     __init__.py:249
+           Your app specifies a license using `license.text`, but the value doesn't appear                                                                           __init__.py:249
+           to be a full license. Briefcase will generate a `LICENSE.rtf` file for your                                                                               __init__.py:249
+           project; you should ensure that the contents of this file is adequate.                                                                                    __init__.py:249
+           Installing license... done                                                                                                                                __init__.py:326
+                                                                                                                                                                       create.py:998
+           [sattva_sound] Removing unneeded app content...                                                                                                             create.py:998
+           Removing unneeded app bundle content... started                                                                                                             create.py:907
+           Removing src\python.exe                                                                                                                                     create.py:917
+           Removing src\pythonw.exe                                                                                                                                    create.py:917
+           Removing directory src\app_packages\__pycache__                                                                                                             create.py:914
+           Removing directory src\app_packages\cffi\__pycache__                                                                                                        create.py:914
+           Removing unneeded app bundle content... errored                                                                                                             create.py:907
+           Saving log... started                                                                                                                                      console.py:443
+
+Main thread traceback:
+┌─────────────────────────────────────────────────────────────────────── Traceback (most recent call last) ────────────────────────────────────────────────────────────────────────┐
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\__main__.py:27 in main                                                                                                     │
+│                                                                                                                                                                                  │
+│   24 │   │   │   Path.cwd() / "pyproject.toml",                                                                                                                                  │
+│   25 │   │   │   overrides=overrides,                                                                                                                                            │
+│   26 │   │   )                                                                                                                                                                   │
+│ > 27 │   │   command(**options)                                                                                                                                                  │
+│   28 │   except HelpText as e:                                                                                                                                                   │
+│   29 │   │   console.info()                                                                                                                                                      │
+│   30 │   │   console.info(str(e))                                                                                                                                                │
+│                                                                                                                                                                                  │
+│ ┌──────────────────────────────────────────────── locals ────────────────────────────────────────────────┐                                                                       │
+│ │       command = <briefcase.platforms.windows.app.WindowsAppCreateCommand object at 0x0000022CD4779FD0> │                                                                       │
+│ │       console = <briefcase.console.Console object at 0x0000022CD11C3620>                               │                                                                       │
+│ │ extra_cmdline = ['--no-input']                                                                         │                                                                       │
+│ │       options = {}                                                                                     │                                                                       │
+│ │     overrides = {}                                                                                     │                                                                       │
+│ │        result = 0                                                                                      │                                                                       │
+│ └────────────────────────────────────────────────────────────────────────────────────────────────────────┘                                                                       │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\commands\create.py:1043 in __call__                                                                                        │
+│                                                                                                                                                                                  │
+│   1040 │   │                                                                                                                                                                     │
+│   1041 │   │   state = None                                                                                                                                                      │
+│   1042 │   │   for _, app_obj in sorted(apps_to_create.items()):                                                                                                                 │
+│ > 1043 │   │   │   state = self.create_app(                                                                                                                                      │
+│   1044 │   │   │   │   app_obj,                                                                                                                                                  │
+│   1045 │   │   │   │   **full_options(state, options),                                                                                                                           │
+│   1046 │   │   │   )                                                                                                                                                             │
+│                                                                                                                                                                                  │
+│ ┌──────────────────────────────────────────────── locals ─────────────────────────────────────────────────┐                                                                      │
+│ │              _ = 'sattva_sound'                                                                         │                                                                      │
+│ │            app = None                                                                                   │                                                                      │
+│ │       app_name = None                                                                                   │                                                                      │
+│ │        app_obj = <com.sattva.sound.sattva-sound v0.1 AppConfig>                                         │                                                                      │
+│ │ apps_to_create = {'sattva_sound': <com.sattva.sound.sattva-sound v0.1 AppConfig>}                       │                                                                      │
+│ │        options = {}                                                                                     │                                                                      │
+│ │           self = <briefcase.platforms.windows.app.WindowsAppCreateCommand object at 0x0000022CD4779FD0> │                                                                      │
+│ │          state = None                                                                                   │                                                                      │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────┘                                                                      │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\commands\create.py:999 in create_app                                                                                       │
+│                                                                                                                                                                                  │
+│    996 │   │   │   self.install_app_resources(app=app)                                                                                                                           │
+│    997 │   │   │                                                                                                                                                                 │
+│    998 │   │   │   self.console.info("Removing unneeded app content...", prefix=app.app_name)                                                                                    │
+│ >  999 │   │   │   self.cleanup_app_content(app=app)                                                                                                                             │
+│   1000 │   │   │                                                                                                                                                                 │
+│   1001 │   │   │   self.console.info(                                                                                                                                            │
+│   1002 │   │   │   │   f"Created {bundle_path.relative_to(self.base_path)}",                                                                                                     │
+│                                                                                                                                                                                  │
+│ ┌────────────────────────────────────────────────────────── locals ───────────────────────────────────────────────────────────┐                                                  │
+│ │         app = <com.sattva.sound.sattva-sound v0.1 AppConfig>                                                                │                                                  │
+│ │ bundle_path = WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/windows/app') │                                                  │
+│ │     options = {}                                                                                                            │                                                  │
+│ │        self = <briefcase.platforms.windows.app.WindowsAppCreateCommand object at 0x0000022CD4779FD0>                        │                                                  │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘                                                  │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\site-packages\briefcase\commands\create.py:915 in cleanup_app_content                                                                              │
+│                                                                                                                                                                                  │
+│    912 │   │   │   │   │   relative_path = path.relative_to(self.bundle_path(app))                                                                                               │
+│    913 │   │   │   │   │   if path.is_dir() and not path.is_symlink():                                                                                                           │
+│    914 │   │   │   │   │   │   self.console.verbose(f"Removing directory {relative_path}")                                                                                       │
+│ >  915 │   │   │   │   │   │   self.tools.shutil.rmtree(path)                                                                                                                    │
+│    916 │   │   │   │   │   else:                                                                                                                                                 │
+│    917 │   │   │   │   │   │   self.console.verbose(f"Removing {relative_path}")                                                                                                 │
+│    918 │   │   │   │   │   │   path.unlink()                                                                                                                                     │
+│                                                                                                                                                                                  │
+│ ┌───────────────────────────────────────────────────────────────────────────── locals ──────────────────────────────────────────────────────────────────────────────┐            │
+│ │             app = <com.sattva.sound.sattva-sound v0.1 AppConfig>                                                                                                  │            │
+│ │            glob = '**/__pycache__'                                                                                                                                │            │
+│ │            path = WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/windows/app/src/app_packages/cffi/__pycache__') │            │
+│ │ paths_to_remove = ['src/python*.exe', '**/__pycache__']                                                                                                           │            │
+│ │   relative_path = WindowsPath('src/app_packages/cffi/__pycache__')                                                                                                │            │
+│ │            self = <briefcase.platforms.windows.app.WindowsAppCreateCommand object at 0x0000022CD4779FD0>                                                          │            │
+│ └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘            │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\shutil.py:790 in rmtree                                                                                                                            │
+│                                                                                                                                                                                  │
+│    787 │   │   │   onexc(os.path.islink, path, err)                                                                                                                              │
+│    788 │   │   │   # can't continue even if onexc hook returns                                                                                                                   │
+│    789 │   │   │   return                                                                                                                                                        │
+│ >  790 │   │   return _rmtree_unsafe(path, onexc)                                                                                                                                │
+│    791                                                                                                                                                                           │
+│    792 # Allow introspection of whether or not the hardening against symlink                                                                                                     │
+│    793 # attacks is supported on the current platform                                                                                                                            │
+│                                                                                                                                                                                  │
+│ ┌─────────────────────────────────────────────────────────────────────────────────── locals ───────────────────────────────────────────────────────────────────────────────────┐ │
+│ │        dir_fd = None                                                                                                                                                         │ │
+│ │ ignore_errors = False                                                                                                                                                        │ │
+│ │       onerror = None                                                                                                                                                         │ │
+│ │          path = WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/windows/app/src/app_packages/cffi/__pycache__')              │ │
+│ │            st = os.stat_result(st_mode=16895, st_ino=5348024557716762, st_dev=15905860481336191074, st_nlink=1, st_uid=0, st_gid=0, st_size=8192, st_atime=1768821879,       │ │
+│ │                 st_mtime=1768821876, st_ctime=1768821875)                                                                                                                    │ │
+│ └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\shutil.py:629 in _rmtree_unsafe                                                                                                                    │
+│                                                                                                                                                                                  │
+│    626 │   │   │   except FileNotFoundError:                                                                                                                                     │
+│    627 │   │   │   │   continue                                                                                                                                                  │
+│    628 │   │   │   except OSError as err:                                                                                                                                        │
+│ >  629 │   │   │   │   onexc(os.unlink, fullname, err)                                                                                                                           │
+│    630 │   try:                                                                                                                                                                  │
+│    631 │   │   os.rmdir(path)                                                                                                                                                    │
+│    632 │   except FileNotFoundError:                                                                                                                                             │
+│                                                                                                                                                                                  │
+│ ┌────────────────────────────────────────────────────────────────────────── locals ───────────────────────────────────────────────────────────────────────────┐                  │
+│ │  dirnames = []                                                                                                                                              │                  │
+│ │   dirpath = 'C:\\Users\\Lenovo\\.gemini\\antigravity\\scratch\\sattva_sound_engine\\build\\sattva_sou'+48                                                   │                  │
+│ │ filenames = [                                                                                                                                               │                  │
+│ │             │   'api.cpython-313.pyc',                                                                                                                      │                  │
+│ │             │   'backend_ctypes.cpython-313.pyc',                                                                                                           │                  │
+│ │             │   'cffi_opcode.cpython-313.pyc',                                                                                                              │                  │
+│ │             │   'commontypes.cpython-313.pyc',                                                                                                              │                  │
+│ │             │   'cparser.cpython-313.pyc',                                                                                                                  │                  │
+│ │             │   'error.cpython-313.pyc',                                                                                                                    │                  │
+│ │             │   'ffiplatform.cpython-313.pyc',                                                                                                              │                  │
+│ │             │   'lock.cpython-313.pyc',                                                                                                                     │                  │
+│ │             │   'model.cpython-313.pyc',                                                                                                                    │                  │
+│ │             │   'pkgconfig.cpython-313.pyc',                                                                                                                │                  │
+│ │             │   ... +8                                                                                                                                      │                  │
+│ │             ]                                                                                                                                               │                  │
+│ │  fullname = 'C:\\Users\\Lenovo\\.gemini\\antigravity\\scratch\\sattva_sound_engine\\build\\sattva_sou'+84                                                   │                  │
+│ │      name = '_shimmed_dist_utils.cpython-313.pyc'                                                                                                           │                  │
+│ │      path = WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/windows/app/src/app_packages/cffi/__pycache__') │                  │
+│ │   results = <generator object walk at 0x0000022CD6725FE0>                                                                                                   │                  │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘                  │
+│                                                                                                                                                                                  │
+│ C:\Users\Lenovo\anaconda3\Lib\shutil.py:625 in _rmtree_unsafe                                                                                                                    │
+│                                                                                                                                                                                  │
+│    622 │   │   for name in filenames:                                                                                                                                            │
+│    623 │   │   │   fullname = os.path.join(dirpath, name)                                                                                                                        │
+│    624 │   │   │   try:                                                                                                                                                          │
+│ >  625 │   │   │   │   os.unlink(fullname)                                                                                                                                       │
+│    626 │   │   │   except FileNotFoundError:                                                                                                                                     │
+│    627 │   │   │   │   continue                                                                                                                                                  │
+│    628 │   │   │   except OSError as err:                                                                                                                                        │
+│                                                                                                                                                                                  │
+│ ┌────────────────────────────────────────────────────────────────────────── locals ───────────────────────────────────────────────────────────────────────────┐                  │
+│ │  dirnames = []                                                                                                                                              │                  │
+│ │   dirpath = 'C:\\Users\\Lenovo\\.gemini\\antigravity\\scratch\\sattva_sound_engine\\build\\sattva_sou'+48                                                   │                  │
+│ │ filenames = [                                                                                                                                               │                  │
+│ │             │   'api.cpython-313.pyc',                                                                                                                      │                  │
+│ │             │   'backend_ctypes.cpython-313.pyc',                                                                                                           │                  │
+│ │             │   'cffi_opcode.cpython-313.pyc',                                                                                                              │                  │
+│ │             │   'commontypes.cpython-313.pyc',                                                                                                              │                  │
+│ │             │   'cparser.cpython-313.pyc',                                                                                                                  │                  │
+│ │             │   'error.cpython-313.pyc',                                                                                                                    │                  │
+│ │             │   'ffiplatform.cpython-313.pyc',                                                                                                              │                  │
+│ │             │   'lock.cpython-313.pyc',                                                                                                                     │                  │
+│ │             │   'model.cpython-313.pyc',                                                                                                                    │                  │
+│ │             │   'pkgconfig.cpython-313.pyc',                                                                                                                │                  │
+│ │             │   ... +8                                                                                                                                      │                  │
+│ │             ]                                                                                                                                               │                  │
+│ │  fullname = 'C:\\Users\\Lenovo\\.gemini\\antigravity\\scratch\\sattva_sound_engine\\build\\sattva_sou'+84                                                   │                  │
+│ │      name = '_shimmed_dist_utils.cpython-313.pyc'                                                                                                           │                  │
+│ │      path = WindowsPath('C:/Users/Lenovo/.gemini/antigravity/scratch/sattva_sound_engine/build/sattva_sound/windows/app/src/app_packages/cffi/__pycache__') │                  │
+│ │   results = <generator object walk at 0x0000022CD6725FE0>                                                                                                   │                  │
+│ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘                  │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\Lenovo\\.gemini\\antigravity\\scratch\\sattva_sound_engine\\build\\sattva_sound\\windows\\app\\src\\app_packages\\cffi\\__pycache__\\_shimmed_dist_utils.cpython-313.pyc'
